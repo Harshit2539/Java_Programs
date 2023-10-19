@@ -8,17 +8,19 @@ public class Prime_Number {
         try (Scanner sc = new Scanner(System.in)) {
             int n = sc.nextInt();
             int i;
+            int a=12;
             for (i = 2; i < n / 2; i++) {
                 if (n % i == 0) {
+                    a=13;
                     break;
                 }
             }
-            if (i == n) {
-                System.out.print("Prime number: " + n);
-            } else {
-                System.out.println("NOt a prime number: ");
-
-            }
+            if (a==12){
+                System.out.print("Prime number: "+n);
+                }
+                else{
+                    System.out.println("Not a prime number: " + n);
+                }
         }
     }
 }
