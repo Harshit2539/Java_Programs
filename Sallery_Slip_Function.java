@@ -11,17 +11,10 @@ public class Sallery_Slip_Function {
         float gross = s + HRA +DA +TA;
         return gross ;
     }
-    public static void main(String[] args) {
-        System.out.println("******Enter your details*****");
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter your Name: ");
-             String name = sc.next();
-             System.out.println("Enter your Salery in Rupees: ");
-            float salery =sc.nextFloat();
-            // function calling
-            float gross = calculation(salery);
-            float tax=0;
-            if(gross<=10000){
+
+    static void check(float gross,float salery,String name){
+        float tax =0;
+         if(gross<=10000){
              tax = 0;
                 float NEt1 =gross - tax;
                 System.out.println("Name: "+name);
@@ -56,6 +49,17 @@ public class Sallery_Slip_Function {
                     System.out.println("THE gross of the person is :"+gross+" Rs");
                     System.out.println("The net salery person got: "+NEt+" Rs");
             }
+    }
+    public static void main(String[] args) {
+        System.out.println("******Enter your details*****");
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter your Name: ");
+             String name = sc.next();
+             System.out.println("Enter your Salery in Rupees: ");
+            float salery =sc.nextFloat();
+            // function calling
+            float gross = calculation(salery);
+            check(gross,salery,name);
             sc.close();
 
     }
